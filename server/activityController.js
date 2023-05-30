@@ -1,11 +1,11 @@
 const activitiesData = require('../data/activities');
 
-// Get all activities
+
 const getAllActivities = (req, res) => {
   res.json(activitiesData);
 };
 
-// Get a specific activity
+
 const getActivity = (req, res) => {
   const { id } = req.params;
   const activity = activitiesData.find((activity) => activity.id === id);
@@ -17,7 +17,7 @@ const getActivity = (req, res) => {
   }
 };
 
-// Create a new activity
+
 const createActivity = (req, res) => {
   const { title, date, location, description } = req.body;
   const newActivity = { id: Date.now().toString(), title, date, location, description };
@@ -26,7 +26,7 @@ const createActivity = (req, res) => {
   res.status(201).json(newActivity);
 };
 
-// Update an existing activity
+
 const updateActivity = (req, res) => {
   const { id } = req.params;
   const { title, date, location, description } = req.body;
@@ -44,7 +44,7 @@ const updateActivity = (req, res) => {
   }
 };
 
-// Delete an activity
+
 const deleteActivity = (req, res) => {
   const { id } = req.params;
   const index = activitiesData.findIndex((activity) => activity.id === id);

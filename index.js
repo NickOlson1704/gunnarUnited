@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var pastList = document.getElementById("pastList");
     var campaignList = document.getElementById("campaignList");
   
-    // Sample data for activities
+    
     var activitiesData = {
       upcoming: [
         {
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
       ]
     };
   
-    // Populate upcoming activities
+    
     activitiesData.upcoming.forEach(function(activity) {
       var li = document.createElement("li");
       var link = document.createElement("a");
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
       upcomingList.appendChild(li);
     });
   
-    // Populate past activities
+    
     activitiesData.past.forEach(function(activity) {
       var li = document.createElement("li");
       var link = document.createElement("a");
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
       pastList.appendChild(li);
     });
   
-    // Populate ongoing campaigns
+    
     activitiesData.campaigns.forEach(function(campaign) {
       var li = document.createElement("li");
       var link = document.createElement("a");
@@ -162,24 +162,24 @@ document.addEventListener("DOMContentLoaded", function() {
     var upcomingList = document.getElementById("upcomingList");
     var activityForm = document.getElementById("activityForm");
   
-    // Sample data for activities
+    
     var activitiesData = {
       upcoming: [],
       past: [],
       campaigns: []
     };
   
-    // Function to add a new activity
+    
     function addActivity(event) {
       event.preventDefault();
   
-      // Get form values
+      
       var title = document.getElementById("title").value;
       var date = document.getElementById("date").value;
       var location = document.getElementById("location").value;
       var description = document.getElementById("description").value;
   
-      // Create a new activity object
+      
       var newActivity = {
         title: title,
         date: date,
@@ -187,52 +187,52 @@ document.addEventListener("DOMContentLoaded", function() {
         description: description
       };
   
-      // Add the new activity to the upcoming activities list
+      
       activitiesData.upcoming.push(newActivity);
   
-      // Clear the form inputs
+      
       activityForm.reset();
   
-      // Update the activities display
+      
       displayActivities();
     }
   
-    // Function to delete an activity
+    
     function deleteActivity(index) {
-      activitiesData.upcoming.splice(index, 1); // Remove the activity at the specified index
+      activitiesData.upcoming.splice(index, 1); 
   
-      // Update the activities display
+      
       displayActivities();
     }
   
-    // Function to display activities
+    
     function displayActivities() {
-      // Clear the current activities list
+     
       upcomingList.innerHTML = "";
   
-      // Populate upcoming activities
+      
       activitiesData.upcoming.forEach(function(activity, index) {
         var li = document.createElement("li");
         li.innerHTML = "<strong>" + activity.title + "</strong> - " + activity.date + ", " + activity.location + "<br>" + activity.description;
   
-        // Create a delete button for each activity
+        
         var deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
         deleteButton.addEventListener("click", function() {
           deleteActivity(index);
         });
   
-        // Append the delete button to the activity
+        
         li.appendChild(deleteButton);
   
         upcomingList.appendChild(li);
       });
     }
   
-    // Add event listener to the activity form submission
+    
     activityForm.addEventListener("submit", addActivity);
   
-    // Initial display of activities
+  
     displayActivities();
   });
   
@@ -252,3 +252,5 @@ document.addEventListener("DOMContentLoaded", function() {
     
     historyText.textContent = aboutData.history;
   });  
+
+  

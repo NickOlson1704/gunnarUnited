@@ -6,6 +6,19 @@ body {
     text-align: center;
     font-size: x-large;
   }
+
+  #donateButton {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #donateButton:hover {
+    background-color: lightblue;
+  }
   
   .container {
     max-width: 800px;
@@ -45,7 +58,8 @@ body {
   
   /* Activities Section Styles */
   section {
-    margin-bottom: 30px;
+    margin-bottom: 70px;
+    
   }
   
   section h2 {
